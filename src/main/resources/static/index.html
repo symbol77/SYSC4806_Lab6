@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AddressBook</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="spa.js"></script>
+</head>
+<body>
+    <button id="createBook" onclick = "style.display = 'none'" type="button">Create an Address Book!</button>
+
+    <div>
+        <p class="book-id">No address book created at the moment...</p>
+    </div>
+
+    <form id="formAddBuddy" action="placeholder" method="post">
+        <p>Name: <input type="text" name="name" /></p>
+        <p>Phone #: <input type="text" name="number"/></p>
+        <p>Address: <input type="text" name="address" /></p>
+        <input type="submit" value="Add buddy to book" />
+    </form>
+
+    <div>
+        <p>List of buddies: </p>
+    </div>
+
+    <table class='table'>
+        <thead>
+            <tr>
+                <th scope='col'>Name</th>
+                <th scope='col'>Phone #</th>
+                <th scope='col'>Address</th>
+            </tr>
+        </thead>
+        <tbody id='buddies'>
+
+        </tbody>
+    </table>
+</body>
+</html>

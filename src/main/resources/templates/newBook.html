@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'The address book id is '+ ${book.id}"> </p>
+
+    <form action="#" th:action="@{/addressbook/addBuddy}" method="post">
+        <input type="hidden" th:value="${book.id}" name="bookID"/>
+        <p>Buddy Name: <input type="text" name="name" /></p>
+        <p>Buddy Number: <input type="text" name="number"/></p>
+        <p>Buddy Address: <input type="text" name="address" /></p>
+        <input type="submit" value="Add buddy" />
+    </form>
+
+    <h3>Current buddies:</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>  Buddy Id  |</th>
+            <th>  Name  |</th>
+            <th>  Phone #  |</th>
+            <th>  Address  |</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${buddies == null}">
+            <td colspan="3"> No buddies registered </td>
+        </tr>
+        <tr th:each="buddy : ${buddies}">
+            <td><span th:text="${buddy.id}"> Id </span></td>
+            <td><span th:text="${buddy.name}"> Name </span></td>
+            <td><span th:text="${buddy.number}"> Number </span></td>
+            <td><span th:text="${buddy.address}"> Address </span></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
