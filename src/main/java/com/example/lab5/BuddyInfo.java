@@ -20,6 +20,7 @@ public class BuddyInfo {
     private String number;
 
     private String address;
+    private String testField; // Solely for testing CircleCI and Heroku purposes
 
     public BuddyInfo() {
 
